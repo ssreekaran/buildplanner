@@ -1,10 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Compass, Wrench, Sparkles, Map } from "lucide-react";
 import heroImage from "@/assets/elden-ring-hero.jpg";
 
 const HeroLayout = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gradient-shadow relative overflow-hidden">
       {/* Background Image with Overlay */}
@@ -103,7 +106,12 @@ const HeroLayout = () => {
                 </div>
               </div>
               
-              <Button variant="ember" size="xl" className="w-full">
+              <Button 
+                variant="ember" 
+                size="xl" 
+                className="w-full"
+                onClick={() => navigate('/create-build')}
+              >
                 Create Custom Build
               </Button>
             </div>
